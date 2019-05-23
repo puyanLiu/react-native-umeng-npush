@@ -1,0 +1,6 @@
+rootProject.name = 'umengPushDemo'
+
+include ':app'
+
+include ':react-native-umeng-npush'
+project(':react-native-umeng-npush').projectDir = new File(rootProject.projectDir, '../node_modules/@cbridge/react-native-umeng-npush/android')

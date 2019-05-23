@@ -1,0 +1,22 @@
+<resources xmlns:tools="http://schemas.android.com/tools"
+           tools:ignore="MissingTranslation">
+
+    <string name="app_name">app_name</string>
+
+    <string name="umeng_key">umeng_key</string>
+    <string name="umeng_message_secret">umeng_message_secret</string>
+    <string name="umeng_channel">service</string>
+
+    <string name="umeng_meizu_app_id">umeng_meizu_app_id</string>
+    <string name="umeng_meizu_app_key">umeng_meizu_app_key</string>
+    <string name="umeng_meizu_app_secret">umeng_meizu_app_secret</string>
+
+    <string name="umeng_xiaomi_app_id">umeng_xiaomi_app_id</string>
+    <string name="umeng_xiaomi_app_key">umeng_xiaomi_app_key</string>
+    <string name="umeng_xiaomi_app_secret">umeng_xiaomi_app_secret==</string>
+
+    <string name="umeng_huawei_app_id">umeng_huawei_app_id</string>
+    <string name="umeng_huawei_app_secret">umeng_huawei_app_secret</string>
+
+    <string name="application_package">com.pushdemo.app</string>
+</resources>

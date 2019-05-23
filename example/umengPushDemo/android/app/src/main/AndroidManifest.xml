@@ -1,0 +1,64 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.dfxingkongmall.app">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+
+    <application
+        android:name="com.dfxingkongmall.app.MainApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+
+        <!--友盟统计APPKEY-->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="@string/umeng_key"/>
+        <!--最新版已不提供直接在xml文件中配置此项-->
+        <meta-data
+            android:name="UMENG_MESSAGE_SECRET"
+            android:value="@string/umeng_message_secret">
+        </meta-data>
+        <!--统计用户下载渠道 设置一个默认的渠道名：service-->
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="@string/umeng_channel"/>
+
+        <activity
+            android:name="com.dfxingkongmall.app.MainActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity"/>
+
+        <!--小米/华为/魅族自定义弹窗功能-->
+        <activity
+            android:name="com.dfxingkongmall.app.PlatformPushTestActivity"
+            android:exported="true"
+            android:launchMode="singleTask"/>
+
+        <!--魅族push应用定义消息receiver声明 -->
+        <receiver android:name="com.dfxingkongmall.app.MeizuTestReceiver">
+            <intent-filter>
+                <!-- 接收push消息 -->
+                <action android:name="com.meizu.flyme.push.intent.MESSAGE" />
+                <!-- 接收register消息 -->
+                <action android:name="com.meizu.flyme.push.intent.REGISTER.FEEDBACK" />
+                <!-- 接收unregister消息-->
+                <action android:name="com.meizu.flyme.push.intent.UNREGISTER.FEEDBACK" />
+                <!-- 兼容低版本Flyme3推送服务配置 -->
+                <action android:name="com.meizu.c2dm.intent.REGISTRATION" />
+                <action android:name="com.meizu.c2dm.intent.RECEIVE" />
+                <category android:name="com.dfxingkongmall.app"></category>
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>
